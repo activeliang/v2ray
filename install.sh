@@ -698,7 +698,7 @@ domain_check() {
 	# fi
 	# test_domain=$(dig $domain +short)
 	test_domain=$(ping $domain -c 1 | grep -oE -m1 "([0-9]{1,3}\.){3}[0-9]{1,3}")
-	if [[ $test_domain != $ip ]]; then
+	#if [[ $test_domain != $ip ]]; then
 		echo
 		echo -e "$red 检测域名解析错误....$none"
 		echo
@@ -708,8 +708,8 @@ domain_check() {
 		echo
 		echo "备注...如果你的域名是使用 Cloudflare 解析的话..在 Status 那里点一下那图标..让它变灰"
 		echo
-		exit 1
-	fi
+		#exit 1
+	#fi
 }
 
 install_caddy() {
